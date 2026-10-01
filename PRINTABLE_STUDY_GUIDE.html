@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>C# Study Guide</title>
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({ startOnLoad: true, theme: 'default', securityLevel: 'loose' });
+  </script>
+  <style>
+    @page {
+      size: A4 portrait;
+      margin: 0.5in;
+    }
+
+    :root {
+      --bg: #ffffff;
+      --ink: #1f2937;
+      --muted: #4b5563;
+      --line: #d1d5db;
+      --heading: #0f172a;
+      --accent: #2563eb;
+      --soft: #eef6ff;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.45;
+      margin: 0;
+      padding: 0;
+    }
+
+    .page {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 24px 18px 40px;
+    }
+
+    .cover {
+      border: 2px solid var(--line);
+      background: linear-gradient(135deg, #f8fbff 0%, #eef6ff 100%);
+      padding: 28px 24px;
+      margin-bottom: 26px;
+      page-break-after: always;
+    }
+
+    h1, h2, h3 {
+      color: var(--heading);
+      margin: 0 0 10px 0;
+      page-break-after: avoid;
+    }
+
+    h1 {
+      font-size: 28pt;
+      letter-spacing: 0.02em;
+    }
+
+    h2 {
+      font-size: 18pt;
+      border-bottom: 2px solid var(--line);
+      padding-bottom: 6px;
+      margin-top: 18px;
+      margin-bottom: 12px;
+    }
+
+    h3 {
+      font-size: 14pt;
+      margin-top: 12px;
+      margin-bottom: 8px;
+    }
+
+    p, li {
+      font-size: 11.5pt;
+      color: var(--ink);
+    }
+
+    .meta {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 10.5pt;
+    }
+
+    .section {
+      margin-bottom: 18px;
+      page-break-inside: avoid;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .card {
+      border: 1px solid var(--line);
+      background: #fff;
+      padding: 14px;
+      border-radius: 10px;
+      page-break-inside: avoid;
+    }
+
+    pre, code {
+      font-family: Consolas, "Courier New", monospace;
+      background: #f5f7fa;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+    }
+
+    pre {
+      white-space: pre-wrap;
+      padding: 12px;
+      font-size: 10.5pt;
+      overflow: hidden;
+    }
+
+    code {
+      padding: 2px 6px;
+    }
+
+    .mermaid {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 10px;
+      text-align: center;
+      overflow: hidden;
+      page-break-inside: avoid;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+      font-size: 10.5pt;
+      border: 1px solid var(--line);
+    }
+
+    th, td {
+      border: 1px solid var(--line);
+      padding: 8px 10px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      background: var(--soft);
+      color: var(--heading);
+    }
+
+    ul {
+      margin: 8px 0 8px 18px;
+      padding: 0;
+    }
+
+    .small {
+      font-size: 10pt;
+      color: var(--muted);
+    }
+
+    @media print {
+      html, body {
+        background: white;
+      }
+      body {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      .page {
+        max-width: none;
+        margin: 0;
+        padding: 0;
+      }
+      .cover {
+        page-break-after: always;
+      }
+      .no-print {
+        display: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="cover">
+      <h1>C# Study Guide</h1>
+      <h3>Reading and Writing C#</h3>
+      <div class="meta">
+        <span>Beginner to Advanced</span>
+        <span>8–12 Week Learning Path</span>
+        <span>Printable Reference</span>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>1. Getting Started</h2>
+      <div class="mermaid">
+        graph LR
+          A[Start] --> B[Basic Syntax]
+          B --> C[Data Types]
+          C --> D[Control Flow]
+          D --> E[Functions/Methods]
+          E --> F[OOP Concepts]
+          F --> G[Advanced Topics]
+          G --> H[Best Practices]
+          H --> I[Master C#]
+      </div>
+      <p class="small">Goal: learn the language progressively from syntax to object-oriented and advanced concepts.</p>
+    </div>
+
+    <div class="section">
+      <h2>2. Learning Time Breakdown</h2>
+      <div class="mermaid">
+        pie title Estimated Learning Time (Total: 8-12 weeks)
+          "Basics & Syntax" : 20
+          "OOP & Classes" : 25
+          "Control Flow & Logic" : 15
+          "Methods & Functions" : 15
+          "Advanced Topics" : 15
+          "Practice & Projects" : 10
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>3. Core Concepts</h2>
+      <div class="mermaid">
+        mindmap
+          root((C# Features))
+            Type System
+              Value Types
+              Reference Types
+              Nullable Types
+            Object-Oriented
+              Classes
+              Inheritance
+              Polymorphism
+              Encapsulation
+            Functional
+              Lambda Expressions
+              LINQ
+              Delegates
+            Modern Features
+              Async/Await
+              Null Coalescing
+              Pattern Matching
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>4. Syntax and Basics</h2>
+      <div class="mermaid">
+        graph TD
+          A[C# Data Types] --> B[Value Types]
+          A --> C[Reference Types]
+          B --> B1[Structs]
+          B --> B2[Enums]
+          B --> B3[Primitive Types]
+          B3 --> B3a[int, float, double]
+          B3 --> B3b[bool]
+          B3 --> B3c[char]
+          C --> C1[Classes]
+          C --> C2[Interfaces]
+          C --> C3[String]
+          C --> C4[Objects]
+          C --> C5[Arrays]
+      </div>
+
+      <h3>Hello World Example</h3>
+      <pre><code>public class Program
+{
+    public static void Main()
+    {
+        string message = "Hello, C#!";
+        Console.WriteLine(message);
+    }
+}</code></pre>
+
+      <h3>Basic Decision and Loop Flow</h3>
+      <div class="mermaid">
+        flowchart TD
+          A[Execution Starts] --> B{Decision Point}
+          B -->|True| C[If Block]
+          B -->|False| D{Another Check?}
+          D -->|Yes| E[Else If Block]
+          D -->|No| F[Else Block]
+          C --> G[Loop Structure]
+          E --> G
+          F --> G
+          G --> H{Loop Condition}
+          H -->|True| I[Execute Loop Body]
+          H -->|False| J[Exit Loop]
+          I --> K[Increment/Update]
+          K --> H
+          J --> L[Continue Execution]
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>5. Object-Oriented Programming</h2>
+      <div class="mermaid">
+        graph TB
+          A[Object-Oriented Programming] --> B[Encapsulation]
+          A --> C[Inheritance]
+          A --> D[Polymorphism]
+          A --> E[Abstraction]
+          B --> B1[Data Hiding]
+          B --> B2[Access Modifiers]
+          C --> C1[Parent Classes]
+          C --> C2[Child Classes]
+          D --> D1[Method Overriding]
+          D --> D2[Interface Implementation]
+          E --> E1[Abstract Classes]
+          E --> E2[Interfaces]
+      </div>
+
+      <h3>Class Relationships</h3>
+      <div class="mermaid">
+        classDiagram
+          class Animal {
+            -string name
+            -int age
+            +Speak() void
+            +Move() void
+          }
+          class Dog {
+            -string breed
+            +Speak() void
+            +Fetch() void
+          }
+          class Cat {
+            -int lives
+            +Speak() void
+            +Scratch() void
+          }
+          Animal <|-- Dog
+          Animal <|-- Cat
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>6. Advanced Topics</h2>
+
+      <h3>Async and Await</h3>
+      <div class="mermaid">
+        sequenceDiagram
+          participant Main
+          participant AsyncMethod
+          participant Resource
+          Main->>AsyncMethod: Call async method
+          AsyncMethod->>Resource: Request data (non-blocking)
+          Note over Main: Main thread continues
+          Resource-->>AsyncMethod: Data ready
+          AsyncMethod->>Main: Return result
+          Note over Main: Resume processing
+      </div>
+
+      <h3>LINQ Flow</h3>
+      <div class="mermaid">
+        graph LR
+          A[Data Source] --> B[Where]
+          B --> C[OrderBy]
+          C --> D[Select]
+          D --> E[Aggregate]
+          E --> F[Result]
+      </div>
+
+      <h3>Exception Handling</h3>
+      <div class="mermaid">
+        flowchart TD
+          A[Try Block] --> B{Exception?}
+          B -->|Yes| C[Catch Block]
+          B -->|No| D[Finally Block]
+          C --> D
+          D --> E[Continue Program]
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>7. Best Practices</h2>
+      <div class="mermaid">
+        graph TD
+          A[Code Quality] --> B[Readability]
+          A --> C[Performance]
+          A --> D[Security]
+          A --> E[Maintainability]
+          B --> B1[Meaningful Names]
+          B --> B2[Comments]
+          C --> C1[Efficient Algorithms]
+          D --> D1[Input Validation]
+          E --> E1[DRY Principle]
+          E --> E2[SOLID Principles]
+      </div>
+
+      <div class="mermaid">
+        mindmap
+          root((SOLID Principles))
+            S - Single Responsibility
+              One job per class
+            O - Open/Closed
+              Extend without breaking
+            L - Liskov Substitution
+              Subtypes behave correctly
+            I - Interface Segregation
+              Small, specific interfaces
+            D - Dependency Inversion
+              Depend on abstractions
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>8. Skills Progression</h2>
+      <div class="mermaid">
+        graph TB
+          subgraph Beginner[Beginner]
+            B1[Variables & Data Types]
+            B2[Basic I/O]
+            B3[Operators]
+          end
+          subgraph Intermediate[Intermediate]
+            I1[Control Flow]
+            I2[Arrays & Collections]
+            I3[Methods]
+            I4[OOP Basics]
+          end
+          subgraph Advanced[Advanced]
+            A1[Inheritance]
+            A2[Interfaces]
+            A3[Exception Handling]
+            A4[LINQ]
+          end
+          subgraph Expert[Expert]
+            E1[Async/Await]
+            E2[Design Patterns]
+            E3[Generics]
+            E4[Performance]
+          end
+          Beginner --> Intermediate --> Advanced --> Expert
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>9. Quick Reference</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Concept</th>
+            <th>Example</th>
+            <th>Use Case</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Variable Declaration</td>
+            <td><code>int age = 25;</code></td>
+            <td>Store data</td>
+          </tr>
+          <tr>
+            <td>If Statement</td>
+            <td><code>if (age > 18) { ... }</code></td>
+            <td>Conditional logic</td>
+          </tr>
+          <tr>
+            <td>For Loop</td>
+            <td><code>for (int i = 0; i < 10; i++)</code></td>
+            <td>Repeat logic</td>
+          </tr>
+          <tr>
+            <td>Method</td>
+            <td><code>public void Greet(string name)</code></td>
+            <td>Reusable logic</td>
+          </tr>
+          <tr>
+            <td>Class</td>
+            <td><code>public class Person { }</code></td>
+            <td>Blueprint for objects</td>
+          </tr>
+          <tr>
+            <td>Interface</td>
+            <td><code>public interface IAnimal { }</code></td>
+            <td>Contract definition</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section">
+      <h2>10. Practice Exercises</h2>
+      <ul>
+        <li>Write a program that adds two numbers</li>
+        <li>Create a basic calculator</li>
+        <li>Check if a number is prime</li>
+        <li>Implement a Person class with properties and methods</li>
+        <li>Build a banking system with inheritance</li>
+        <li>Write an async file-processing example</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>11. Study Checklist</h2>
+      <ul>
+        <li>Understand variables, data types, and operators</li>
+        <li>Write and read basic if/else and loops</li>
+        <li>Use methods and classes correctly</li>
+        <li>Apply inheritance, encapsulation, and polymorphism</li>
+        <li>Handle exceptions gracefully</li>
+        <li>Use LINQ and async/await effectively</li>
+        <li>Follow naming, structure, and testing best practices</li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>
